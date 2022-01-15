@@ -101,7 +101,7 @@
 			}
 		],
 		"folder": {
-			"name": "move_file_from_folder_to_folder"
+			"name": "move_file_from_folder_to_FolderAndSql"
 		},
 		"annotations": []
 	}
