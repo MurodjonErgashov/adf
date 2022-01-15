@@ -458,7 +458,7 @@
 											"type": "DatasetReference",
 											"parameters": {
 												"TableName": {
-													"value": "@item().name",
+													"value": "@concat(substring(item().name,0 ,lastIndexOf(item().name, '_')))",
 													"type": "Expression"
 												}
 											}
