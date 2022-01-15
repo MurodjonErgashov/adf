@@ -8,6 +8,9 @@
 		"ls_azure_sql_databaseYouTube110_db_connectionString": {
 			"value": ""
 		},
+		"ls_blb_source_toget_mul_tables_connectionString": {
+			"value": ""
+		},
 		"ls_blob_load_files_from_to_folder_connectionString": {
 			"value": ""
 		},

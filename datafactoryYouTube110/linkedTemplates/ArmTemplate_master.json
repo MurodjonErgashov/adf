@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_azure_sql_databaseYouTube110_db'"
 		},
+		"ls_blb_source_toget_mul_tables_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_blb_source_toget_mul_tables'"
+		},
 		"ls_blob_load_files_from_to_folder_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_blob_load_files_from_to_folder'"
@@ -61,6 +65,9 @@
 					"ls_azure_sql_databaseYouTube110_db_connectionString": {
 						"value": "[parameters('ls_azure_sql_databaseYouTube110_db_connectionString')]"
 					},
+					"ls_blb_source_toget_mul_tables_connectionString": {
+						"value": "[parameters('ls_blb_source_toget_mul_tables_connectionString')]"
+					},
 					"ls_blob_load_files_from_to_folder_connectionString": {
 						"value": "[parameters('ls_blob_load_files_from_to_folder_connectionString')]"
 					},
@@ -79,6 +86,26 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "datafactoryYouTube110_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'datafactoryYouTube110_ArmTemplate_0')]"
+			]
 		}
 	]
 }
