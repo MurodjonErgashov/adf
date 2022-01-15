@@ -1,0 +1,21 @@
+{
+	"name": "ds_metadata_load_multiple_table",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_blb_source_toget_mul_tables",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "archive"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
