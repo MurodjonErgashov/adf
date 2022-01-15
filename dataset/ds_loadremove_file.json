@@ -1,0 +1,21 @@
+{
+	"name": "ds_loadremove_file",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_blob_load_files_from_to_folder",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "output"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

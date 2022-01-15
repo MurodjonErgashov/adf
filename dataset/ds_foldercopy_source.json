@@ -1,0 +1,21 @@
+{
+	"name": "ds_foldercopy_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_blob_load_files_from_to_folder",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
