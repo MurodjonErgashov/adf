@@ -42,7 +42,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ds_loadremove_file",
+						"referenceName": "ds_foldercopy_source",
 						"type": "DatasetReference"
 					}
 				],
