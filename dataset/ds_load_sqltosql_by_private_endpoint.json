@@ -1,0 +1,16 @@
+{
+	"name": "ds_load_sqltosql_by_private_endpoint",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_for_Private_Endpoint",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "sales_des"
+		}
+	}
+}
