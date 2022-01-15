@@ -1,0 +1,9 @@
+{
+	"name": "customforDelete",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f4716ea3-5857-487d-98a7-c219b6a50525",
+		"tenantId": "612a00ba-ef5e-40a2-8f2f-b83dea25aadc"
+	}
+}
