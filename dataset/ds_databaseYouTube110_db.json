@@ -1,0 +1,23 @@
+{
+	"name": "ds_databaseYouTube110_db",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_azure_sql_databaseYouTube110_db",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"TableName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"table": {
+				"value": "@dataset().TableName",
+				"type": "Expression"
+			}
+		}
+	}
+}
