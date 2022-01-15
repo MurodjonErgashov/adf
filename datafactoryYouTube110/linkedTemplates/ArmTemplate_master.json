@@ -15,6 +15,22 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_blob_load_files_from_to_folder'"
 		},
+		"ls_for_connect_TechBrothersT_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_for_connect_TechBrothersT'"
+		},
+		"ls_for_Private_Endpoint_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_for_Private_Endpoint'"
+		},
+		"managed_private_endpoint_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/2b26e16b-1a52-4ac2-9a32-0e57fcc4b111/resourceGroups/resourceforYouTube110/providers/Microsoft.Sql/servers/serveryoutube110"
+		},
+		"managed_private_endpoint_properties_groupId": {
+			"type": "string",
+			"defaultValue": "sqlServer"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -47,6 +63,18 @@
 					},
 					"ls_blob_load_files_from_to_folder_connectionString": {
 						"value": "[parameters('ls_blob_load_files_from_to_folder_connectionString')]"
+					},
+					"ls_for_connect_TechBrothersT_connectionString": {
+						"value": "[parameters('ls_for_connect_TechBrothersT_connectionString')]"
+					},
+					"ls_for_Private_Endpoint_connectionString": {
+						"value": "[parameters('ls_for_Private_Endpoint_connectionString')]"
+					},
+					"managed_private_endpoint_properties_privateLinkResourceId": {
+						"value": "[parameters('managed_private_endpoint_properties_privateLinkResourceId')]"
+					},
+					"managed_private_endpoint_properties_groupId": {
+						"value": "[parameters('managed_private_endpoint_properties_groupId')]"
 					}
 				}
 			},
