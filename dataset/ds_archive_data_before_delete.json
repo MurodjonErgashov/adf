@@ -1,5 +1,5 @@
 {
-	"name": "ds_foldercopy_source",
+	"name": "ds_archive_data_before_delete",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_blob_load_files_from_to_folder",
@@ -10,11 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "input"
+				"container": "archive"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
-			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": []
