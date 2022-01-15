@@ -1,0 +1,16 @@
+{
+	"name": "ds_sql_load_multiple_files",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_azure_sql_databaseYouTube110_db",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "loadFilesFromFolder"
+		}
+	}
+}
