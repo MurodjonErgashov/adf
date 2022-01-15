@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "datafactoryYouTube110"
 		},
+		"ls_blob_load_files_from_to_folder_connectionString": {
+			"value": ""
+		},
 		"containerUri": {
 			"value": ""
 		},
