@@ -11,10 +11,10 @@
 		"ls_blob_load_files_from_to_folder_connectionString": {
 			"value": ""
 		},
-		"ls_for_connect_TechBrothersT_connectionString": {
+		"ls_for_Private_Endpoint_connectionString": {
 			"value": ""
 		},
-		"ls_for_Private_Endpoint_connectionString": {
+		"ls_for_connect_TechBrothersT_connectionString": {
 			"value": ""
 		},
 		"managed_private_endpoint_properties_privateLinkResourceId": {
