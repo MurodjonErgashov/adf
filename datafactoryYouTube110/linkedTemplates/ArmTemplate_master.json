@@ -27,6 +27,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_for_connect_TechBrothersT'"
 		},
+		"ls_sal_delete_from_mutiple_containers_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_sal_delete_from_mutiple_containers'"
+		},
+		"ls_logging_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_logging'"
+		},
 		"managed_private_endpoint_properties_privateLinkResourceId": {
 			"type": "string",
 			"defaultValue": "/subscriptions/2b26e16b-1a52-4ac2-9a32-0e57fcc4b111/resourceGroups/resourceforYouTube110/providers/Microsoft.Sql/servers/serveryoutube110"
@@ -74,8 +82,11 @@
 					"ls_for_connect_TechBrothersT_connectionString": {
 						"value": "[parameters('ls_for_connect_TechBrothersT_connectionString')]"
 					},
-					"ls_for_Private_Endpoint_connectionString": {
-						"value": "[parameters('ls_for_Private_Endpoint_connectionString')]"
+					"ls_sal_delete_from_mutiple_containers_connectionString": {
+						"value": "[parameters('ls_sal_delete_from_mutiple_containers_connectionString')]"
+					},
+					"ls_logging_connectionString": {
+						"value": "[parameters('ls_logging_connectionString')]"
 					},
 					"managed_private_endpoint_properties_privateLinkResourceId": {
 						"value": "[parameters('managed_private_endpoint_properties_privateLinkResourceId')]"
@@ -100,6 +111,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"ls_for_Private_Endpoint_connectionString": {
+						"value": "[parameters('ls_for_Private_Endpoint_connectionString')]"
 					}
 				}
 			},

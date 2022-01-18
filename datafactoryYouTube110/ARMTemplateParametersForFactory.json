@@ -20,6 +20,12 @@
 		"ls_for_connect_TechBrothersT_connectionString": {
 			"value": ""
 		},
+		"ls_sal_delete_from_mutiple_containers_connectionString": {
+			"value": ""
+		},
+		"ls_logging_connectionString": {
+			"value": ""
+		},
 		"managed_private_endpoint_properties_privateLinkResourceId": {
 			"value": "/subscriptions/2b26e16b-1a52-4ac2-9a32-0e57fcc4b111/resourceGroups/resourceforYouTube110/providers/Microsoft.Sql/servers/serveryoutube110"
 		},
