@@ -1,0 +1,25 @@
+{
+	"name": "ds_remove_files_from_multiple_container",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_blb_source_toget_mul_tables",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"foldername": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": {
+					"value": "@dataset().foldername",
+					"type": "Expression"
+				}
+			}
+		}
+	}
+}

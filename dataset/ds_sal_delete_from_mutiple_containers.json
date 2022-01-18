@@ -1,0 +1,12 @@
+{
+	"name": "ds_sal_delete_from_mutiple_containers",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sal_delete_from_mutiple_containers",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
