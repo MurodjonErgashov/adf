@@ -1,0 +1,23 @@
+{
+	"name": "ds_get_file_to_get_files_name_and_extention",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_blb_source_toget_mul_tables",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "fileRemove.txt",
+				"container": "output"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
