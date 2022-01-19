@@ -20,10 +20,10 @@
 		"ls_for_connect_TechBrothersT_connectionString": {
 			"value": ""
 		},
-		"ls_sal_delete_from_mutiple_containers_connectionString": {
+		"ls_logging_connectionString": {
 			"value": ""
 		},
-		"ls_logging_connectionString": {
+		"ls_sal_delete_from_mutiple_containers_connectionString": {
 			"value": ""
 		},
 		"managed_private_endpoint_properties_privateLinkResourceId": {

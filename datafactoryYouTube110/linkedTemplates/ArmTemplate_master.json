@@ -27,13 +27,13 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_for_connect_TechBrothersT'"
 		},
-		"ls_sal_delete_from_mutiple_containers_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'ls_sal_delete_from_mutiple_containers'"
-		},
 		"ls_logging_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_logging'"
+		},
+		"ls_sal_delete_from_mutiple_containers_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_sal_delete_from_mutiple_containers'"
 		},
 		"managed_private_endpoint_properties_privateLinkResourceId": {
 			"type": "string",
@@ -82,11 +82,11 @@
 					"ls_for_connect_TechBrothersT_connectionString": {
 						"value": "[parameters('ls_for_connect_TechBrothersT_connectionString')]"
 					},
-					"ls_sal_delete_from_mutiple_containers_connectionString": {
-						"value": "[parameters('ls_sal_delete_from_mutiple_containers_connectionString')]"
-					},
 					"ls_logging_connectionString": {
 						"value": "[parameters('ls_logging_connectionString')]"
+					},
+					"ls_sal_delete_from_mutiple_containers_connectionString": {
+						"value": "[parameters('ls_sal_delete_from_mutiple_containers_connectionString')]"
 					},
 					"managed_private_endpoint_properties_privateLinkResourceId": {
 						"value": "[parameters('managed_private_endpoint_properties_privateLinkResourceId')]"
