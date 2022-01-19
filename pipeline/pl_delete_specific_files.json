@@ -64,7 +64,7 @@
 									"referenceName": "ds_remove_files_from_multiple_container",
 									"type": "DatasetReference",
 									"parameters": {
-										"foldername": {
+										"filename": {
 											"value": "@item().filename",
 											"type": "Expression"
 										}
