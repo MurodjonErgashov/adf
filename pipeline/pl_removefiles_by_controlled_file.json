@@ -75,10 +75,17 @@
 										}
 									}
 								},
-								"enableLogging": false,
+								"logStorageSettings": {
+									"linkedServiceName": {
+										"referenceName": "ls_logging",
+										"type": "LinkedServiceReference"
+									},
+									"path": "f60a3e21-f68c-498e-a99c-5299fa2ca28e"
+								},
+								"enableLogging": true,
 								"storeSettings": {
 									"type": "AzureBlobStorageReadSettings",
-									"recursive": false,
+									"recursive": true,
 									"wildcardFileName": {
 										"value": "@{item().wildcard}",
 										"type": "Expression"
