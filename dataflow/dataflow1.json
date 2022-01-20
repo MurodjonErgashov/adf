@@ -12,17 +12,13 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [
+			"sinks": [],
+			"transformations": [
 				{
-					"dataset": {
-						"referenceName": "Json1",
-						"type": "DatasetReference"
-					},
-					"name": "sink1"
+					"name": "Stringify1"
 				}
 			],
-			"transformations": [],
-			"script": "source(output(\n\t\tadf as (prospect as ({@status} as string, customer as (agent as string, comments as (comment as string), contact as (address as ({@type} as string, apartment as string, city as string, country as string, postalcode as integer, regioncode as string, street as ({@line} as boolean)), email as string, name as ({@part} as string, {_value_} as string)[], phone as ({@type} as string, {_value_} as integer)[]), timeframe as (description as string, earliestdate as string, latestdate as string)), id as ({@sequence} as boolean, {@source} as string, {_value_} as string), provider as (name as ({@part} as string, {_value_} as string), service as string), requestdate as string, vehicle as ({@interest} as string, {@status} as string, make as string, model as string, stock as string, trim as string, vin as string, year as short), vendor as (agentname as string, contact as (vendorname as string), id as ({@sequence} as boolean, {@source} as string, {_value_} as string)[])))\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tvalidationMode: 'none',\n\tnamespaces: true) ~> source1\nsource1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\tmapColumn(\n\t\tadf,\n\t\tstatus,\n\t\tagent,\n\t\tid_v,\n\t\tpart,\n\t\tinterest,\n\t\tmake,\n\t\tagentname\n\t)) ~> sink1"
+			"script": "source(output(\n\t\tadf as (prospect as ({@status} as string, customer as (agent as string, comments as (comment as string), contact as (address as ({@type} as string, apartment as string, city as string, country as string, postalcode as integer, regioncode as string, street as ({@line} as boolean)), email as string, name as ({@part} as string, {_value_} as string)[], phone as ({@type} as string, {_value_} as integer)[]), timeframe as (description as string, earliestdate as string, latestdate as string)), id as ({@sequence} as boolean, {@source} as string, {_value_} as string), provider as (name as ({@part} as string, {_value_} as string), service as string), requestdate as string, vehicle as ({@interest} as string, {@status} as string, make as string, model as string, stock as string, trim as string, vin as string, year as short), vendor as (agentname as string, contact as (vendorname as string), id as ({@sequence} as boolean, {@source} as string, {_value_} as string)[])))\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tvalidationMode: 'none',\n\tnamespaces: true) ~> source1\nsource1 stringify(column1 = adf.prospect.{@status} ? string,\n\tformat: 'json') ~> Stringify1"
 		}
 	}
 }
