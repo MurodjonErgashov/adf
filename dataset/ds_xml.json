@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "test.xml",
+				"fileName": "tes2.xml",
 				"container": "task-xml"
 			}
 		}
