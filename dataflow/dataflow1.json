@@ -3,10 +3,30 @@
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
-			"sources": [],
-			"sinks": [],
-			"transformations": [],
-			"script": "parameters{\n\tcity as string (adf.prospect.customer.contact.address.city),\n\tcomment as string (adf.prospect.customer.comments.comment),\n\tagent as string (adf.prospect.customer.agent)\n}"
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_xml",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable3",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "DerivedColumn1"
+				}
+			],
+			"script": "source(output(\n\t\tadf as (prospect as ({@status} as string, customer as (agent as string, comments as (comment as string), contact as (address as ({@type} as string, apartment as string, city as string, country as string, postalcode as integer, regioncode as string, street as ({@line} as boolean)), email as string, name as ({@part} as string, {_value_} as string)[], phone as ({@type} as string, {_value_} as integer)[]), timeframe as (description as string, earliestdate as string, latestdate as string)), id as ({@sequence} as boolean, {@source} as string, {_value_} as string), provider as (name as ({@part} as string, {_value_} as string), service as string), requestdate as string, vehicle as ({@interest} as string, {@status} as string, make as string, model as string, stock as string, trim as string, vin as string, year as short), vendor as (agentname as string, contact as (vendorname as string), id as ({@sequence} as boolean, {@source} as string, {_value_} as string)[])))\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tvalidationMode: 'none',\n\tnamespaces: true) ~> source1\nsource1 derive(comment = adf.prospect.customer.comments.comment,\n\t\tagent = adf.prospect.customer.agent,\n\t\tcity = adf.prospect.customer.contact.address.city) ~> DerivedColumn1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tinput(\n\t\tid as integer,\n\t\tejet as string,\n\t\tcomment as string,\n\t\tcity as string\n\t),\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError') ~> sink1"
 		}
 	}
 }
