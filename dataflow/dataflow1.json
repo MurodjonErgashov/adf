@@ -15,13 +15,10 @@
 			"sinks": [],
 			"transformations": [
 				{
-					"name": "Stringify1"
-				},
-				{
 					"name": "Parse1"
 				}
 			],
-			"script": "source(output(\n\t\tadf as (prospect as ({@status} as string, customer as (agent as string, comments as (comment as string), contact as (address as ({@type} as string, apartment as string, city as string, country as string, postalcode as integer, regioncode as string, street as ({@line} as boolean)), email as string, name as ({@part} as string, {_value_} as string)[], phone as ({@type} as string, {_value_} as integer)[]), timeframe as (description as string, earliestdate as string, latestdate as string)), id as ({@sequence} as boolean, {@source} as string, {_value_} as string), provider as (name as ({@part} as string, {_value_} as string), service as string), requestdate as string, vehicle as ({@interest} as string, {@status} as string, make as string, model as string, stock as string, trim as string, vin as string, year as short), vendor as (agentname as string, contact as (vendorname as string), id as ({@sequence} as boolean, {@source} as string, {_value_} as string)[])))\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tvalidationMode: 'none',\n\tnamespaces: true) ~> source1\nsource1 stringify(col = adf ? string,\n\tformat: 'json') ~> Stringify1\nStringify1 parse(column1 = col,\n\tformat: 'json',\n\tdocumentForm: 'documentPerLine') ~> Parse1"
+			"script": "source(output(\n\t\tadf as (prospect as ({@status} as string, customer as (agent as string, comments as (comment as string), contact as (address as ({@type} as string, apartment as string, city as string, country as string, postalcode as integer, regioncode as string, street as ({@line} as boolean)), email as string, name as ({@part} as string, {_value_} as string)[], phone as ({@type} as string, {_value_} as integer)[]), timeframe as (description as string, earliestdate as string, latestdate as string)), id as ({@sequence} as boolean, {@source} as string, {_value_} as string), provider as (name as ({@part} as string, {_value_} as string), service as string), requestdate as string, vehicle as ({@interest} as string, {@status} as string, make as string, model as string, stock as string, trim as string, vin as string, year as short), vendor as (agentname as string, contact as (vendorname as string), id as ({@sequence} as boolean, {@source} as string, {_value_} as string)[])))\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tvalidationMode: 'none',\n\tnamespaces: true) ~> source1\nsource1 parse(column1 = ERROR_FUNCTION(''),\n\tformat: 'json',\n\tdocumentForm: 'documentPerLine') ~> Parse1"
 		}
 	}
 }
