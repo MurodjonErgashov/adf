@@ -18,7 +18,7 @@
 					"name": "Flatten1"
 				}
 			],
-			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tenableCdc: true,\n\tmode: 'read',\n\tvalidationMode: 'none',\n\tnamespaces: true,\n\tpartitionBy('key',\n\t\t0,\n\t\tERROR_FUNCTION('')\n\t)) ~> source1\nsource1 foldDown(unroll(),\n\tpartitionBy('roundRobin', 2),\n\tskipDuplicateMapInputs: false,\n\tskipDuplicateMapOutputs: false) ~> Flatten1"
+			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tenableCdc: true,\n\tmode: 'read',\n\tvalidationMode: 'none',\n\tnamespaces: true) ~> source1\nsource1 foldDown(unroll(),\n\tpartitionBy('roundRobin', 2),\n\tskipDuplicateMapInputs: false,\n\tskipDuplicateMapOutputs: false) ~> Flatten1"
 		}
 	}
 }
